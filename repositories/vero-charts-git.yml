@@ -9,5 +9,5 @@ spec:
   url: ssh://git@bitbucket.org/sayvero/vero-helm-charts
   ref:
     branch: develop
-  secretRef:
-    name: flux-system/ssh-credentials
+  # secretRef:
+  #   name: flux-system/ssh-credentials
