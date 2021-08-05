@@ -10,7 +10,7 @@ spec:
     branch: local
   secretRef:
     name: ssh-credentials
-  url: ssh://git@github.com/marcocaberletti/flux-v2-poc.git
+  url: ssh://git@github.com/marcocaberletti/flux-v2-poc
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
 kind: Kustomization
