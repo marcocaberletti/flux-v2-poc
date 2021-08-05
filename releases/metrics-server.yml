@@ -11,6 +11,6 @@ spec:
       sourceRef:
         kind: GitRepository
         name: vero-charts-git
-        namespace: default
+        namespace: flux-system
       chart: ./metrics-server
   values: {}
