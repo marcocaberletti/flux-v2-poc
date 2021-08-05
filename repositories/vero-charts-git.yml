@@ -10,4 +10,4 @@ spec:
   ref:
     branch: develop
   secretRef:
-    name: flux-system/ssh-credentials
+    name: ssh-credentials
