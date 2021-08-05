@@ -1,0 +1,16 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: metrics-server
+  namespace: kube-system
+spec:
+  interval: 5m
+  chart:
+    spec:
+      sourceRef:
+        kind: GitRepository
+        name: vero-charts-git
+        namespace: default
+      chart: ./metrics-server
+  values: {}
