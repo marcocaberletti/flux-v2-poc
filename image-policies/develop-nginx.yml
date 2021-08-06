@@ -8,15 +8,15 @@ spec:
   image: nginx
   interval: 5m
 
----
-apiVersion: image.toolkit.fluxcd.io/v1beta1
-kind: ImagePolicy
-metadata:
-  name: develop-nginx
-  namespace: flux-system
-spec:
-  imageRepositoryRef:
-    name: nginx
-  policy:
-    semver:
-      range: 1.20.1
+# ---
+# apiVersion: image.toolkit.fluxcd.io/v1beta1
+# kind: ImagePolicy
+# metadata:
+#   name: develop-nginx
+#   namespace: flux-system
+# spec:
+#   imageRepositoryRef:
+#     name: nginx
+#   policy:
+#     semver:
+#       range: 1.20.1
