@@ -3,7 +3,7 @@ apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImageRepository
 metadata:
   name: nginx
-  namespace: develop
+  namespace: flux-system
 spec:
   image: nginx
   interval: 5m
@@ -12,8 +12,8 @@ spec:
 apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImagePolicy
 metadata:
-  name: nginx
-  namespace: develop
+  name: develop-nginx
+  namespace: flux-system
 spec:
   imageRepositoryRef:
     name: nginx
