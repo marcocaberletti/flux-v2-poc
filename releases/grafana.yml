@@ -1,0 +1,51 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: grafana
+  namespace: admin
+spec:
+  interval: 5m
+  chart:
+    spec:
+      sourceRef:
+        kind: HelmRepository
+        name: grafana-repo
+        namespace: default
+      chart: grafana
+      version: 6.13.8
+  values:
+    ingress:
+      enabled: false
+    serviceAccount:
+      create: true
+      name: grafana
+    rbac:
+      namespaced: true
+    testFramework:
+      enabled: false
+    resources:
+      limits:
+        memory: 500Mi
+      requests:
+        cpu: 100m
+        memory: 500Mi
+    initChownData:
+      enabled: false
+    imageRenderer:
+      enabled: false
+    grafana.ini:
+      paths:
+        temp_data_lifetime: 24h
+      server:
+        protocol: http
+        http_port: 3000
+        domain: grafana.local.io
+        root_url: http://grafana.local.io
+      security:
+        # Admin user configuration is injected by chart as GF_SECURITY_* variables.
+        login_remember_days: 5
+      users:
+        allow_sign_up: false
+        allow_org_create: false
+        auto_assign_org_role: Viewer
