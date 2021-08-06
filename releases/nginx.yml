@@ -14,4 +14,4 @@ spec:
         namespace: flux-system
       chart: ./dummy-chart
   values:
-    image: nginx:1.20.0 # {"$imagepolicy": "develop:nginx"}
+    image: nginx:1.20.0 # {"$imagepolicy": "flux-system:develop-nginx"}
