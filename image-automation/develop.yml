@@ -2,8 +2,8 @@
 apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImageUpdateAutomation
 metadata:
-  name: flux-system
-  namespace: flux-system
+  name: develop
+  namespace: develop
 spec:
   interval: 1m0s
   sourceRef:
