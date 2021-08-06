@@ -13,7 +13,7 @@ spec:
       author:
         email: flux@sayvero.com
         name: Flux
-      messageTemplate: '{{range .Updated.Images}}{{println .}}{{end}}'
+      messageTemplate: 'Deploy {{range .Updated.Images}}{{println .}}{{end}}'
     push:
       branch: local
   interval: 1m0s
