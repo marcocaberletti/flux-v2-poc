@@ -66,6 +66,8 @@ spec:
       extraEnvironmentVars:
         AWS_DEFAULT_REGION: us-east-2
         AWS_DYNAMODB_ENDPOINT: http://localstack.localstack.svc:4566
+        AWS_ACCESS_KEY_ID: fake
+        AWS_SECRET_ACCESS_KEY: fake
 
     # Vault UI
     ui:
