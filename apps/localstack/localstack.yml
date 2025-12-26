@@ -24,7 +24,7 @@ spec:
     debug: false
 
     # Comma-separated list of AWS CLI service names
-    startServices: "dynamodb"
+    startServices: "dynamodb,kms"
 
     extraEnvVars: []
       # - name: DEFAULT_REGION

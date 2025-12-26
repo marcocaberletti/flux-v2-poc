@@ -59,12 +59,18 @@ spec:
             disable_hostname = true
           }
 
+          seal "awskms" {
+            region     = "us-east-2"
+            kms_key_id = "alias/vault-sealing-key"
+          }
+
       serviceAccount:
         create: true
         name: "vault"
 
       extraEnvironmentVars:
         AWS_DEFAULT_REGION: us-east-2
+        AWS_ENDPOINT_URL: http://localstack.localstack.svc:4566
         AWS_DYNAMODB_ENDPOINT: http://localstack.localstack.svc:4566
         AWS_ACCESS_KEY_ID: fake
         AWS_SECRET_ACCESS_KEY: fake
