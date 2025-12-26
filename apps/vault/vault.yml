@@ -29,6 +29,8 @@ spec:
       service:
         type: NodePort
 
+      updateStrategyType: RollingUpdate
+
       ingress:
         enabled: false
 
@@ -70,8 +72,6 @@ spec:
 
       extraEnvironmentVars:
         AWS_DEFAULT_REGION: us-east-2
-        AWS_ENDPOINT_URL: http://localstack.localstack.svc:4566
-        AWS_ENDPOINT_URL_KMS: http://localstack.localstack.svc:4566
         AWS_KMS_ENDPOINT: http://localstack.localstack.svc:4566
         AWS_DYNAMODB_ENDPOINT: http://localstack.localstack.svc:4566
         AWS_ACCESS_KEY_ID: fake
