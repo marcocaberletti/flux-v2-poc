@@ -66,10 +66,11 @@ spec:
             disable_hostname = true
           }
 
-          # seal "awskms" {
-          #   region     = "us-east-2"
-          #   kms_key_id = "alias/vault-sealing-key"
-          # }
+          seal "awskms" {
+            region     = "us-east-2"
+            kms_key_id = "alias/vault-sealing-key"
+            disabled = "true"
+          }
 
       serviceAccount:
         create: true
