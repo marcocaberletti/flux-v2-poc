@@ -7,5 +7,5 @@ metadata:
 spec:
   type: oci
   provider: generic
-  url: oci://docker.io/envoyproxy/gateway-helm
+  url: oci://docker.io/envoyproxy
   interval: 1h
