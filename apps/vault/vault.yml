@@ -26,8 +26,6 @@ spec:
           memory: 256Mi
         limits:
           memory: 256Mi
-      service:
-        type: NodePort
 
       updateStrategyType: RollingUpdate
 
@@ -66,19 +64,12 @@ spec:
             disable_hostname = true
           }
 
-          # seal "awskms" {
-          #   region     = "us-east-2"
-          #   kms_key_id = "alias/vault-sealing-key"
-          #   disabled = "true"
-          # }
-
       serviceAccount:
         create: true
         name: "vault"
 
       extraEnvironmentVars:
         AWS_DEFAULT_REGION: us-east-2
-        AWS_KMS_ENDPOINT: http://localstack.localstack.svc:4566
         AWS_DYNAMODB_ENDPOINT: http://localstack.localstack.svc:4566
         AWS_ACCESS_KEY_ID: fake
         AWS_SECRET_ACCESS_KEY: fake
