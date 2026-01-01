@@ -6,9 +6,9 @@ metadata:
   namespace: default
 spec:
   parentRefs:
-    - name: mtls-public
-      namespace: envoy-gateway
-      sectionName: https
+    - namespace: envoy-gateway
+      name: public
+      sectionName: mtls-helloworld
   hostnames:
     - "helloworld.example.io"
   rules:

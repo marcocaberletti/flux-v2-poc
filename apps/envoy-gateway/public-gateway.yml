@@ -43,10 +43,10 @@ spec:
       allowedRoutes:
         namespaces:
           from: All
-    - name: https
+    - name: mtls-helloworld
       protocol: HTTPS
       port: 443
-      hostname: "*.example.io"
+      hostname: "helloworld.example.io"
       allowedRoutes:
         namespaces:
           from: All
@@ -56,4 +56,16 @@ spec:
         - kind: Secret
           name: domain-certs
           namespace: envoy-gateway
-
+    - name: https
+      protocol: HTTPS
+      port: 443
+      # hostname: "*.example.io"
+      allowedRoutes:
+        namespaces:
+          from: All
+      tls:
+        mode: Terminate
+        certificateRefs:
+        - kind: Secret
+          name: domain-certs
+          namespace: envoy-gateway
