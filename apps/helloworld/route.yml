@@ -6,7 +6,7 @@ metadata:
   namespace: default
 spec:
   parentRefs:
-    - name: public
+    - name: mtls-public
       namespace: envoy-gateway
       sectionName: https
   hostnames:
