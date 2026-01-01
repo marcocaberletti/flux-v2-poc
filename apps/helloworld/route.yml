@@ -1,0 +1,21 @@
+---
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: helloworld
+  namespace: default
+spec:
+  parentRefs:
+    - name: public
+      namespace: envoy-gateway
+      sectionName: https
+  hostnames:
+    - "helloworld.example.io"
+  rules:
+    - matches:
+        - path:
+            type: PathPrefix
+            value: /
+      backendRefs:
+        - name: helloworld
+          port: 80

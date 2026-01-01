@@ -1,0 +1,11 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: envoy-repo
+  namespace: default
+spec:
+  type: oci
+  provider: generic
+  url: oci://docker.io/envoyproxy/gateway-helm
+  interval: 1h
