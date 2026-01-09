@@ -73,6 +73,7 @@ spec:
         AWS_DYNAMODB_ENDPOINT: http://localstack.localstack.svc:4566
         AWS_ACCESS_KEY_ID: fake
         AWS_SECRET_ACCESS_KEY: fake
+        VAULT_LOG_LEVEL: debug
 
     # Vault UI
     ui:
