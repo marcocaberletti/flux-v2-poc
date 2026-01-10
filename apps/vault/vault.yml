@@ -75,6 +75,11 @@ spec:
         AWS_SECRET_ACCESS_KEY: fake
         VAULT_LOG_LEVEL: debug
 
+      extraVolumes:
+      - type: secret
+        name: gcp-sa-key
+        path: /etc/ssl/google
+
     # Vault UI
     ui:
       enabled: true
