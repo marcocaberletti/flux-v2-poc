@@ -1,5 +1,5 @@
 ---
-apiVersion: image.toolkit.fluxcd.io/v1beta2
+apiVersion: image.toolkit.fluxcd.io/v1
 kind: ImageUpdateAutomation
 metadata:
   name: flux-system
@@ -8,14 +8,31 @@ spec:
   git:
     checkout:
       ref:
-        branch: local
+        branch: main
     commit:
       author:
-        email: flux@sayvero.com
+        email: flux@users.noreply.github.com
         name: Flux
-      messageTemplate: 'Deploy {{range .Updated.Images}}{{println .}}{{end}}'
+      messageTemplate: |
+        Automated image update
+
+        Automation name: {{ .AutomationObject }}
+
+        Files:
+        {{ range $filename, $_ := .Changed.FileChanges -}}
+        - {{ $filename }}
+        {{ end -}}
+
+        Objects:
+        {{ range $resource, $changes := .Changed.Objects -}}
+        - {{ $resource.Kind }} {{ $resource.Name }}
+          Changes:
+        {{- range $_, $change := $changes }}
+            - {{ $change.OldValue }} -> {{ $change.NewValue }}
+        {{ end -}}
+        {{ end -}}
     push:
-      branch: local
+      branch: main
   interval: 1m0s
   sourceRef:
     kind: GitRepository
