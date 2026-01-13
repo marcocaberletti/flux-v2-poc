@@ -19,4 +19,4 @@ spec:
     name: nginx
   policy:
     semver:
-      range: 1.20.x
+      range: 1.21.x
