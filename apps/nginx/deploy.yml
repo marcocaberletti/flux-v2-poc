@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: public.ecr.aws/docker/library/nginx:1.21.6 # {"$imagepolicy": "flux-system:nginx"}
+          image: public.ecr.aws/docker/library/nginx:1.22.1 # {"$imagepolicy": "flux-system:nginx"}
           resources:
             requests:
               memory: 32Mi
